@@ -5,7 +5,7 @@
             <div class="row no-gutters">
                 <div class="col-6 col-md-6 col-lg-6 np">
                     <div class="row">
-                        <div class="col-md-6 col-lg-4" style="padding-right:0px;">
+                        <div class="col-md-6 col-lg-4 text-left" style="padding-right:0px;">
                             <span class="header-logo">
                                 <a href="/"><svg width="40px" height="50px" viewBox="0 0 40 50" version="1.1"
                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -64,19 +64,19 @@
                         </nav>
                     </div>
                     <div class="d-block d-sm-block d-md-block d-lg-none d-xl-none col-md-12 np">
-                        <button onclick="SandwichEffect()" class="bte2" id="btn2">
-                            <span id="lin1" class="spn12"></span>
-                            <span id="lin2" class="spn22"></span>
-                            <span id="lin3" class="spn32"></span>
-                            <span id="lin4" class="spn42"></span>
-                            <span id="lin6" class="spn62"></span>
+                        <button @click="SandwichEffect" :class="[bte2c]"  id="btn2">
+                            <span :class="[change1]" id="lin1" ></span>
+                            <span :class="[change2]"  id="lin2" ></span>
+                            <span :class="[change3]" id="lin3" ></span>
+                            <span :class="[change4]" id="lin4" ></span>
+                            <span :class="[change6]" id="lin6"></span>
                         </button>
                     </div>
                 </div>
 
             </div>
         </div>
-        <div id="subheader" class="d-block d-sm-block d-md-block d-lg-none d-xl-none col-md-12">
+        <div id="subheader" v-bind:style="styleSubheader" class="d-block d-sm-block d-md-block d-lg-none d-xl-none col-md-12">
             <ul class="subnav-mobile">
                 <li>
                     <a class="btnFormEstablecimientos" href="">
@@ -104,22 +104,218 @@
     </header>
 
 </template>
+
 <script>
 /*eslint-disable */
-
-
-
-
 export default {
   name: 'Header',
+  data(){
+      return {
+        change1 : 'change11',
+        change2 : 'change22',
+        change3 : 'change33',
+        change4 : 'change44',
+        change6 : 'change66',
+        bte2c : 'bte22c',
+        contador :0,
+        styleSubheader:{
+            marginLeft:'6000px',
+        }
+      }
+  },
+  methods:{
+      SandwichEffect: function (){
+          if(this.contador == 0){
+            this.change1 = 'change1',
+            this.change2 = 'change2',
+            this.change3 = 'change3',
+            this.change4 = 'change4',
+            this.change6 = 'change6',
+            this.bte2c = 'bte2c',
+            this.styleSubheader.marginLeft = '-15px',
+            this.contador=1
+
+          }else{
+              this.change1 = 'change11',
+            this.change2 = 'change22',
+            this.change3 = 'change33',
+            this.change4 = 'change44',
+            this.change6 = 'change66',
+            this.bte2c = 'bte22c',
+            this.styleSubheader.marginLeft = '6000px',
+            this.contador=0
+          }
+      }
+  }
    
 };
 </script>
-<script>
-        
-        
-        
+<style>
+.change1{
+opacity:0;
+bottom:-10px;
+transform:rotate(45deg);
+height: 5px;
+    background-color: #ff1d47;
+    display: block;
+    position: relative;
+    transition: all 0.3s;
+    bottom: 0px;
+    border-radius: 100px;
+}
+.change11{
+opacity:1;
+bottom:0px;
+transform:rotate(0deg);
+height: 5px;
+    background-color: #ff1d47;
+    display: block;
+    position: relative;
+    transition: all 0.3s;
+    bottom: 0px;
+    border-radius: 100px;
+}
+.change2{
+opacity:0;
+background-color:transparent;
+height: 5px;
+    background-color: #ff1d47;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition: all 0.3s;
+    position: relative;
+    transition: all 0.3s;
+    border-radius: 100px;
+    
+}
+.change22{
+opacity:1;
+background-color:white;
+height: 5px;
+    background-color: #ff1d47;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition: all 0.3s;
+    position: relative;
+    transition: all 0.3s;
+    border-radius: 100px;
+}
+.change3{
+opacity:0;
+top:-10px;
+transform:rotate(-45deg);
+height: 5px;
+    background-color: #ff1d47;
+    display: block;
+    position: relative;
+    transition: all 0.3s;
+    top: 0px;
+    border-radius: 100px;
+}
+.change33{
+opacity:1;
+top:0px;
+transform:rotate(0deg);
+height: 5px;
+    background-color: #ff1d47;
+    display: block;
+    position: relative;
+    transition: all 0.3s;
+    top: 0px;
+    border-radius: 100px;
+}
+.change4{
+opacity:1;
+height: 5px;
+    background-color: #ff1d47;
+    display: block;
+    position: relative;
+    transition: all 0.3s;
+    bottom: 15px;
+    opacity: 1;
+    transform: rotate(45deg);
+    border-radius: 100px;
+}
+.change44{
+opacity:0;
+ height: 5px;
+    background-color: #ff1d47;
+    display: block;
+    position: relative;
+    transition: all 0.3s;
+    bottom: 15px;
+    opacity: 0;
+    transform: rotate(45deg);
+    border-radius: 100px;
+}
+.change6{
+opacity:1;
+height: 5px;
+    background-color: #ff1d47;
+    display: block;
+    position: relative;
+    transition: all 0.3s;
+    top: -20px;
+    opacity: 1;
+    transform: rotate(-45deg);
+    border-radius: 100px;
+}
+.change66{
+opacity:0;
+height: 5px;
+    background-color: #ff1d47;
+    display: block;
+    position: relative;
+    transition: all 0.3s;
+    top: -20px;
+    opacity: 0;
+    transform: rotate(-45deg);
+    border-radius: 100px;
+}
+.bte2c{
+z-index:99999;
+position:relative;
+width: 60px;
+height: 30px;
+padding: 0px 0px 0px 26px;
+background-color: transparent;
+border: 0px;
+box-shadow: 0px 0px 0px transparent;
+transition: all 0.3s;
+outline: none;
+float: right;
+margin-top:13px;
 
-</script>
+}
+.bte22c{
+z-index:9;
+position:relative;
+width: 60px;
+height: 30px;
+padding: 0px 0px 0px 26px;
+background-color: transparent;
+border: 0px;
+box-shadow: 0px 0px 0px transparent;
+transition: all 0.3s;
+outline: none;
+float: right;
+margin-top:13px;
+}
+.bte22c:focus{
+    outline: none;
+}
+.subheaderc{
+margin-left:0px;
+}
+.subheaderc{
+margin-left:6000px;
+}
+
+
+
+</style>
+
 
 
