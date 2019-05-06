@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <div class="inicio_sesion">
     <Header />
-      
+    <Login /> 
 
     <Footer />
   </div>
@@ -12,15 +12,15 @@
 // @ is an alias to /src
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import Login from "@/components/InicioSesion.vue";
 
 export default {
-  name: "home",
+  name: "inicio_sesion",
   components: {
     Header,
+    Login,
     Footer,
-    HelloWorld
+
   }
 };
 </script>

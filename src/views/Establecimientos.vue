@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="establecimientos">
     <Header />
       
 
@@ -12,15 +12,13 @@
 // @ is an alias to /src
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-import HelloWorld from "@/components/HelloWorld.vue";
-
 
 export default {
-  name: "home",
+  name: "establecimientos",
   components: {
     Header,
     Footer,
-    HelloWorld
+
   }
 };
 </script>
