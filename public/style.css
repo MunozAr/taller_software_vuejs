@@ -408,6 +408,7 @@ a {
 .login-form .group .button {
     text-transform: uppercase;
     outline: none;
+    
 }
 
 .login-html .sign-in:checked+.tab,
@@ -432,6 +433,7 @@ a {
 .login-form .group .button {
     width: 100%;
     color: #232323;
+    text-align: center;
     display: block;
     outline: none;
 }
@@ -523,6 +525,9 @@ a {
 
 .foot-lnk {
     text-align: center;
+}
+.foot-lnk label{
+    color: white;
 }
 
 .posSesion {
