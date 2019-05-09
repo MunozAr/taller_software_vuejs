@@ -151,27 +151,45 @@ export default {
             if (this.validEmail(this.email) && this.password) {
                 //console.log('Logeando');
             var currentObjl = this;
+
+                console.log('Logeando');
+            
+
             this.axios.post('http://35.198.26.118:4000/api/sign_in', {
                 email: this.email,
                 password: this.password
             })
             .then(function (response) {
-                console.log(response);
-                //    currentObj.output = response.data;
-                console.log(response.data.jwt);
-                //currentObj.output = response.data.jwt; 
+                //console.log(response.data.jwt);
                 localStorage.token = response.data.jwt;
                 console.log(atob(response.data.jwt.split(".")[1]));
                 localStorage.user = atob(response.data.jwt.split(".")[1]);
-                console.log(JSON.parse(atob(response.data.jwt.split(".")[1])));
-                console.log(JSON.parse(atob(response.data.jwt.split(".")[1])).sub);
+                //console.log(JSON.parse(atob(response.data.jwt.split(".")[1])));
+                //console.log(JSON.parse(atob(response.data.jwt.split(".")[1])).sub);
                 localStorage.userid = JSON.parse(atob(response.data.jwt.split(".")[1])).sub;
-
+                
+                 localStorage.setItem('access-token', localStorage.token) // store the token in localstorage
+                 localStorage.setItem('id', localStorage.userid) 
+                setTimeout("location.href='/'", 1000);
+                 
             })
             .catch(function (error) {
                 console.log(error);
                 //currentObjl.output = error.response;
                 //console.log(currentObjl.output.error);
+                    //console.log(response.data);
+                   /* var token = response.data.jwt;
+                    console.log(token);
+                    if(token){
+                        localStorage.setItem('user', JSON.stringify(token));
+                        VueJwtDecode.decode(token)
+                        const user = JSON.parse(localStorage.getItem('user'));
+                        console.log(VueJwtDecode.decode(token));
+                    }*/
+            })
+            .catch(function (error) {
+                currentObjl.output = error.response;
+                console.log(currentObjl.output);
             });
             }else{  
                 if (!this.email) {
@@ -250,14 +268,14 @@ button {
     top: 40%;
 }
 .btnCerrarErrores{
-    background-color: transparent;
-    outline: none;
-    border:1px solid rgba(255, 29, 71, 1);
-    font-family: 'muli_bold';
-    padding: 10px 10px 10px 10px;
-    font-size: 15px;
-    color: rgba(255, 29, 71, 1);
-    border-radius: 20px;
+background-color: transparent;
+outline: none;
+border:1px solid rgba(255, 29, 71, 1);
+font-family: 'muli_bold';
+padding: 10px 10px 10px 10px;
+font-size: 15px;
+color: rgba(255, 29, 71, 1);
+border-radius: 20px;
 }
 </style>
 

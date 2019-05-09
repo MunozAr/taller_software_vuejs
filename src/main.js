@@ -10,7 +10,14 @@ Vue.use(VueJwtDecode);
 Vue.use(VueAxios, axios);
 
 Vue.config.productionTip = false;
+const token = localStorage.getItem('access-token')
+const userid = localStorage.getItem('id')
+if (token && userid) {
+  axios.defaults.headers.common['Authorization'] = token
+}
 
+console.log(token);
+console.log(userid);
 
 new Vue({
   router,

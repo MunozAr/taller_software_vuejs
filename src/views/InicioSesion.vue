@@ -2,7 +2,6 @@
   <div class="inicio_sesion">
     <Header />
     <Login /> 
-
     <Footer />
   </div>
 </template>
@@ -20,7 +19,6 @@ export default {
     Header,
     Login,
     Footer,
-
   }
 };
 </script>

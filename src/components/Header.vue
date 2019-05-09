@@ -54,9 +54,11 @@
                                         <i class="fa fa-plus"></i> Agregar Establecimiento
                                     </a>
                                 </li>
-                                <!--li>
-                                    <a href="#">Registrarme</a>
-                                </li-->
+                                <li>
+                                    <button class="" @click="logout()">
+                                        Cerrar sesion
+                                    </button>
+                                </li>
                                 <li>
                                     <a href="/inicio_sesion">Iniciar Sesión / Registrarme</a>
                                 </li>
@@ -87,7 +89,7 @@
                     <a href="#">Registrarme</a>
                 </li-->
                 <li>
-                    <a href="/inicio_sesion">Inicio de Sesión</a>
+                    <a href="/inicio_sesion">Inicio de Sesión / Registro</a>
                 </li>
                 <li>
                     <a href="/">Inicio</a>
@@ -95,6 +97,7 @@
                 <li>
                     <a href="/establecimientos">ss</a>
                 </li>
+                
                 <!--li>
                     <a href="">Noticias</a>
                 </li-->
@@ -145,7 +148,15 @@ export default {
             this.styleSubheader.marginLeft = '6000px',
             this.contador=0
           }
+      },
+      logout () {
+      localStorage.removeItem('access-token')
+      localStorage.removeItem('id')
+      this.$router.push({
+        name: 'inicio_sesion'
+        })
       }
+
   }
    
 };
