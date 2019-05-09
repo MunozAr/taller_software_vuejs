@@ -50,16 +50,16 @@
                         <nav class="nav">
                             <ul class="ul-spaced">
                                 <li>
-                                    <a class="btnFormEstablecimientos" href="#">
+                                    <a class="btnFormEstablecimientos" href="/registro_establecimiento">
                                         <i class="fa fa-plus"></i> Agregar Establecimiento
                                     </a>
                                 </li>
-                                <li>
-                                    <button class="" @click="logout()">
+                                <li v-if="loggedIn">
+                                    <button class="btnCerrarToken" @click="logout()">
                                         Cerrar sesion
                                     </button>
                                 </li>
-                                <li>
+                                <li v-if="!loggedIn">
                                     <a href="/inicio_sesion">Iniciar Sesión / Registrarme</a>
                                 </li>
                             </ul>
@@ -80,22 +80,25 @@
         </div>
         <div id="subheader" v-bind:style="styleSubheader" class="d-block d-sm-block d-md-block d-lg-none d-xl-none col-md-12">
             <ul class="subnav-mobile">
-                <li>
-                    <a class="btnFormEstablecimientos" href="">
-                        <i class="fa fa-plus"></i> Agregar Establecimiento
-                    </a>
-                </li>
-                <!--li>
-                    <a href="#">Registrarme</a>
-                </li-->
-                <li>
-                    <a href="/inicio_sesion">Inicio de Sesión / Registro</a>
-                </li>
-                <li>
+                 <li>
                     <a href="/">Inicio</a>
                 </li>
                 <li>
-                    <a href="/establecimientos">ss</a>
+                    <a href="/establecimientos">Establecimientos</a>
+                </li>
+                <li>
+                    <a class="btnFormEstablecimientos" href="/registro_establecimiento">
+                        <i class="fa fa-plus"></i> Agregar Establecimiento
+                    </a>
+                </li>
+                <li v-if="!loggedIn">
+                    <a href="/inicio_sesion">Inicio de Sesión / Registro</a>
+                </li>
+                
+                <li v-if="loggedIn">
+                    <button class="btnCerrarToken" @click="logout()">
+                        Cerrar sesion
+                    </button>
                 </li>
                 
                 <!--li>
@@ -137,7 +140,6 @@ export default {
             this.bte2c = 'bte2c',
             this.styleSubheader.marginLeft = '0px',
             this.contador=1
-
           }else{
               this.change1 = 'change11',
             this.change2 = 'change22',
@@ -149,16 +151,20 @@ export default {
             this.contador=0
           }
       },
-      logout () {
-      localStorage.removeItem('access-token')
-      localStorage.removeItem('id')
-      this.$router.push({
-        name: 'inicio_sesion'
-        })
-      }
-
-  }
-   
+      logout(){
+        localStorage.removeItem('access_token')
+        localStorage.removeItem('id')
+        this.$store.state.accessToken = null;
+        setTimeout("location.href='inicio_sesion'", 1000);
+      },
+    },
+    computed:{
+        loggedIn(){
+            console.log(this.$store.getters.loggedIn);
+            return this.$store.getters.loggedIn
+        },
+        
+    }
 };
 </script>
 <style>
@@ -295,7 +301,7 @@ background-color: transparent;
 border: 0px;
 box-shadow: 0px 0px 0px transparent;
 transition: all 0.3s;
-outline: none;
+outline: none !important;
 float: right;
 margin-top:13px;
 
@@ -310,7 +316,7 @@ background-color: transparent;
 border: 0px;
 box-shadow: 0px 0px 0px transparent;
 transition: all 0.3s;
-outline: none;
+outline: none !important;
 float: right;
 margin-top:13px;
 }
@@ -324,7 +330,27 @@ margin-left:0px;
 margin-left:6000px;
 }
 
+.btnCerrarToken{
+    border:1px solid #ff1d47;
+    color: #ff1d47;
+    background-color: transparent;
+    outline: none;
+    font-family: 'muli_bold';
+    font-size: 13px;
+    border-radius: 20px;
+    transition: 0.4s all;
+}
 
+.btnCerrarToken:hover,.btnCerrarToken:focus{
+    border:1px solid #ff1d47;
+    color: white;
+    background-color: #ff1d47;
+    outline: none;
+    font-family: 'muli_bold';
+    font-size: 13px;
+    border-radius: 20px;
+    transition: 0.4s all;
+}
 
 </style>
 

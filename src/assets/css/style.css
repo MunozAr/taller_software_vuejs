@@ -348,7 +348,14 @@ transition: all 0.5s;
 *,
 :after,
 :before {
-    box-sizing: border-box
+    box-sizing: border-box;
+}
+
+.posSesion{
+    background-image: url('../img/totalback_sesion.jpg');
+    width: 100%;
+    height: auto;
+    background-size: cover;
 }
 
 .clearfix:after,
@@ -367,6 +374,15 @@ a {
     text-decoration: none
 }
 
+.login-wrapEstablecimiento {
+    width: 100%;
+    margin: auto;
+    max-width: 525px;
+    height: auto;
+    position: relative;
+    background: url(../img/bg2.jpg);
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+}
 .login-wrap {
     width: 100%;
     margin: auto;
@@ -384,6 +400,7 @@ a {
     padding: 80px 70px 50px 70px;
     background: rgba(255, 29, 71, 0.6);
 }
+
 
 .login-html .sign-in-htm,
 .login-html .sign-up-htm {
@@ -537,8 +554,16 @@ a {
 
 
 
-/*Establecimientos*/
+/*Registro Establecimientos*/
+.backgroundEstablecimiento{
+    background-image: url('../img/totalback_establecimiento.jpg');
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    padding-top: 80px;
+    padding-bottom: 80px;
 
+}
 
 
 

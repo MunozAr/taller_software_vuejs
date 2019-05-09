@@ -2,6 +2,18 @@
   <div class="establecimientos">
     <Header />  
     <BannerEstablecimiento />
+    <div class="container">
+      <div class="row">
+        <div class="col-12  col-lg-5 col-xl-5">
+            <!--Filtro de Busqueda -->
+        </div>
+        <div class="col-12  col-lg-7 col-xl-7">
+
+            <Establecimiento />
+   
+        </div>
+      </div>  
+    </div>
     <Footer />
   </div>
 </template>
@@ -12,11 +24,13 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import BannerEstablecimiento from "@/components/BannerEstablecimiento.vue";
+import Establecimiento from "@/components/Establecimiento.vue";
 export default {
   name: "establecimientos",
   components: {
     Header,
     BannerEstablecimiento,
+    Establecimiento,
     Footer,
 
   }

@@ -40,9 +40,9 @@
                         </div>
                         </form>
                         <div class="hr"></div>
-                        <div class="foot-lnk">
+                        <!--div class="foot-lnk">
                             <a href="#forgot">¿Olvidate tu contraseña?</a>
-                        </div>
+                        </div-->
                     </div>
                     <div class="sign-up-htm">
                         <form @submit="formRegistro" autocomplete="off">
@@ -77,7 +77,7 @@
             </div>
         </div>
         </div>
-       </div>
+</div>
   </div>
 </template>
 
@@ -87,9 +87,6 @@
 
 export default {
     name:'Login',
-    mounted() {
-        console.log('Component mounted.')
-    },
     data() {
         return {
             email: '',
@@ -104,7 +101,6 @@ export default {
         };
     },
     methods: {
-        
         formRegistro(e) {
             e.preventDefault();
             this.errors = [];
@@ -121,10 +117,22 @@ export default {
                     })
                     .then(function (response) {
                             currentObj.output = response.data;
+                            localStorage.token = response.data.jwt;
+                            console.log(atob(response.data.jwt.split(".")[1]));
+                            localStorage.user = atob(response.data.jwt.split(".")[1]);
+                            //console.log(JSON.parse(atob(response.data.jwt.split(".")[1])));
+                            //console.log(JSON.parse(atob(response.data.jwt.split(".")[1])).sub);
+                            localStorage.userid = JSON.parse(atob(response.data.jwt.split(".")[1])).sub;
+                            
+                            localStorage.setItem('access_token', localStorage.token) // store the token in localstorage
+                            localStorage.setItem('id', localStorage.userid) 
+                            setTimeout("location.href='/'", 1000);
                            
                     })
                     .catch(function (error) {
                         currentObj.output = error;
+                        this.errors.push('Error en el servidor - Intente en otro momento'); 
+                        this.showError=true;
                     });
                   
                 }else{
@@ -168,13 +176,14 @@ export default {
                 //console.log(JSON.parse(atob(response.data.jwt.split(".")[1])).sub);
                 localStorage.userid = JSON.parse(atob(response.data.jwt.split(".")[1])).sub;
                 
-                 localStorage.setItem('access-token', localStorage.token) // store the token in localstorage
+                 localStorage.setItem('access_token', localStorage.token) // store the token in localstorage
                  localStorage.setItem('id', localStorage.userid) 
                 setTimeout("location.href='/'", 1000);
                  
             })
             .catch(function (error) {
                 console.log(error);
+                
                 //currentObjl.output = error.response;
                 //console.log(currentObjl.output.error);
                     //console.log(response.data);
@@ -188,8 +197,11 @@ export default {
                     }*/
             })
             .catch(function (error) {
+                this.errors.push('¡Intente con una cuenta válida!'); 
+                this.showError=true;
                 currentObjl.output = error.response;
                 console.log(currentObjl.output);
+                
             });
             }else{  
                 if (!this.email) {
@@ -199,17 +211,14 @@ export default {
                     this.errors.push('Contraseña correcta requerida.');
                 }
                 this.showError=true;
-                
             }
-        
         },
         validEmail: function (email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
         },
-        
+     },
 
-     }
 }
 
 
@@ -277,6 +286,8 @@ font-size: 15px;
 color: rgba(255, 29, 71, 1);
 border-radius: 20px;
 }
+
+
 </style>
 
 

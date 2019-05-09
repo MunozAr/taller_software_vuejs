@@ -1,14 +1,19 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import axios from "axios";
+
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-  accessToken: localStorage.getItem('access-token') ||  '',
+  accessToken: localStorage.getItem('access_token') || null,
   currentUser: {}
   },
   mutations: {},
-  actions: {}
+  actions: {},
+  getters:{
+    loggedIn(state){
+      return state.accessToken != null
+    }
+  }
 });
