@@ -5,6 +5,10 @@
 </template>
 
 <style>
+@import 'assets/css/style.css';
+@import 'assets/css/bootstrap.min.css';
+@import 'static/fonts/stylesheet.css';
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -373,7 +373,7 @@ a {
     max-width: 525px;
     height: 680px;
     position: relative;
-    background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
+    background: url(../img/bg.jpg) no-repeat center;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
 }
 
@@ -455,6 +455,7 @@ a {
 .login-form .group .label {
     color: white;
     font-size: 12px;
+    font-family: 'muli_semibold';
 }
 
 .login-form .group .button {
@@ -512,6 +513,9 @@ a {
 .login-html .sign-in:checked+.tab+.sign-up+.tab+.login-form .sign-in-htm {
     transform: rotate(0);
 }
+.sign-in-htm{
+    margin-top:50px;
+}
 
 .login-html .sign-up:checked+.tab+.login-form .sign-up-htm {
     transform: rotate(0);
@@ -530,10 +534,7 @@ a {
     color: white;
 }
 
-.posSesion {
-    padding-top: 150px;
-    padding-bottom: 150px;
-}
+
 
 
 /*Establecimientos*/
@@ -570,6 +571,7 @@ a {
         font-size: 16px;
         margin-right: 15px;
         padding-bottom: 5px;
+        font-family: 'muli_bold';
         margin: 0 15px 10px 0;
         display: inline-block;
         border-bottom: 2px solid transparent;
@@ -587,11 +589,11 @@ a {
     }
 
     .form-control{
-        border: 0;
-        border-radius: 34px;
-        height: 68px;
-        line-height: 68px;
-        padding: 1px 20px;
+        border: 0 !important;
+        border-radius: 34px !important;
+        height: 68px !important;
+        line-height: 68px !important;
+        padding: 1px 20px !important;
         margin-left: 5px;
         margin: auto;
         max-width: 420px;
@@ -612,6 +614,11 @@ a {
       background-size: cover;
       width: 100%;
       background-repeat: no-repeat;
+    }
+
+    .posSesion {
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
 }
 
@@ -649,6 +656,7 @@ a {
         font-size: 22px;
         margin-right: 15px;
         padding-bottom: 5px;
+        font-family: 'muli_bold';
         margin: 0 15px 10px 0;
         display: inline-block;
         border-bottom: 2px solid transparent;
@@ -664,8 +672,18 @@ a {
         text-align: center;
     }
 
+    .titleEstablecimiento h4 a{
+        font-family: 'muli_bold',sans-serif;
+        text-align: center;
+    }
+
     .backgroundEstablecimientos{
       height: 450px;
+    }
+
+    .posSesion {
+        padding-top: 150px;
+        padding-bottom: 150px;
     }
 
 
@@ -682,11 +700,11 @@ a {
     }
 
     .form-control{
-        border: 0;
-        border-radius: 34px;
-        height: 68px;
+        border: 0 !important;
+        border-radius: 34px !important;
+        height: 68px !important;
         line-height: 68px;
-        padding: 1px 20px;
+        padding: 1px 20px !important;
         margin-left: 5px;
         margin: 0 0 0 6px;
     }

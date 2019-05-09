@@ -1,23 +1,6 @@
 <template>
     <div class="col-12 np">
-         <section class="zonaEstablecimientos">
-      <div class="col-12 backgroundEstablecimientos">
-        <div class="col-12 np buscadorInicio">
-            <h1 class="tituloSection1 text-center">
-                Busca, Encuentra, Disfruta
-            </h1>
-            <h5 class="tituloSection2 text-center">
-                Todo en un solo lugar
-            </h5>
-        </div>
-      </div>
-    </section>
-
-    <section class="zonaFiltros">
-      <form action="post">
-        
-      </form>
-    </section>
+    
 
     <section class="zonaResultados">
       <div class="container">
@@ -28,7 +11,7 @@
           <div class="col-12  col-lg-7 col-xl-7">
               <div class="row">
                 <div class="col-12 col-sm-5 np">
-                  <img class="img-responsive" src="app/img/establishment.jpg" alt="">
+                  <img class="img-responsive" src="assets/img/establishment.jpg" alt="">
                 </div>
                 <div class="col-12 col-sm-7">
                   <div class="col-12 titleEstablecimiento">

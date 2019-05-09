@@ -1,0 +1,24 @@
+@font-face{
+    font-family: 'muli_regular';
+    src: url('Muli-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'muli_light';
+    src: url('Muli-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'muli_semibold';
+    src: url('Muli-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'muli_bold';
+    src: url('Muli-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

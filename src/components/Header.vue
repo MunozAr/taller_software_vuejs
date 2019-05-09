@@ -37,9 +37,9 @@
                                     <li class="nav-item">
                                         <a href="/establecimientos">Establecimientos</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!--li class="nav-item">
                                         <a href="">Noticias</a>
-                                    </li>
+                                    </li-->
                                 </ul>
                             </nav>
                         </div>
@@ -54,11 +54,11 @@
                                         <i class="fa fa-plus"></i> Agregar Establecimiento
                                     </a>
                                 </li>
-                                <li>
+                                <!--li>
                                     <a href="#">Registrarme</a>
-                                </li>
+                                </li-->
                                 <li>
-                                    <a href="/inicio_sesion">Inicio de Sesión</a>
+                                    <a href="/inicio_sesion">Iniciar Sesión / Registrarme</a>
                                 </li>
                             </ul>
                         </nav>
@@ -83,9 +83,9 @@
                         <i class="fa fa-plus"></i> Agregar Establecimiento
                     </a>
                 </li>
-                <li>
-                    <a href="registro.html">Registrarme</a>
-                </li>
+                <!--li>
+                    <a href="#">Registrarme</a>
+                </li-->
                 <li>
                     <a href="/inicio_sesion">Inicio de Sesión</a>
                 </li>
@@ -95,9 +95,9 @@
                 <li>
                     <a href="/establecimientos">ss</a>
                 </li>
-                <li>
+                <!--li>
                     <a href="">Noticias</a>
-                </li>
+                </li-->
 
             </ul>
         </div>
@@ -132,7 +132,7 @@ export default {
             this.change4 = 'change4',
             this.change6 = 'change6',
             this.bte2c = 'bte2c',
-            this.styleSubheader.marginLeft = '-15px',
+            this.styleSubheader.marginLeft = '0px',
             this.contador=1
 
           }else{

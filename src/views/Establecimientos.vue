@@ -1,8 +1,7 @@
 <template>
   <div class="establecimientos">
-    <Header />
-      
-
+    <Header />  
+    <BannerEstablecimiento />
     <Footer />
   </div>
 </template>
@@ -12,11 +11,12 @@
 // @ is an alias to /src
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-
+import BannerEstablecimiento from "@/components/BannerEstablecimiento.vue";
 export default {
   name: "establecimientos",
   components: {
     Header,
+    BannerEstablecimiento,
     Footer,
 
   }
