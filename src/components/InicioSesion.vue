@@ -150,18 +150,26 @@ export default {
             this.errors = [];
             if (this.validEmail(this.email) && this.password) {
                 //console.log('Logeando');
-            let currentObjl = this;
+            var currentObjl = this;
             this.axios.post('http://35.198.26.118:4000/api/sign_in', {
                 email: this.email,
                 password: this.password
             })
             .then(function (response) {
-                    currentObj.output = response.data;
-                    
+                console.log(response);
+                //    currentObj.output = response.data;
+                console.log(response.data.jwt);
+                //currentObj.output = response.data.jwt; 
+                localStorage.token = response.data.jwt;
+                console.log(atob(response.data.jwt.split(".")[1]));
+                localStorage.user = atob(response.data.jwt.split(".")[1]);
+                localStorage.userid = JSON.parse(atob(response.data.jwt.split(".")[1])).sub;
+
             })
             .catch(function (error) {
-                currentObjl.output = error.response;
-                console.log(currentObjl.output.error);
+                console.log(error);
+                //currentObjl.output = error.response;
+                //console.log(currentObjl.output.error);
             });
             }else{  
                 if (!this.email) {
