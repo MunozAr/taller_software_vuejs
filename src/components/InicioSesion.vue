@@ -163,6 +163,8 @@ export default {
                 localStorage.token = response.data.jwt;
                 console.log(atob(response.data.jwt.split(".")[1]));
                 localStorage.user = atob(response.data.jwt.split(".")[1]);
+                console.log(JSON.parse(atob(response.data.jwt.split(".")[1])));
+                console.log(JSON.parse(atob(response.data.jwt.split(".")[1])).sub);
                 localStorage.userid = JSON.parse(atob(response.data.jwt.split(".")[1])).sub;
 
             })
