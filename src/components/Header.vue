@@ -31,11 +31,12 @@
                         <div class="d-none d-sm-none d-md-none d-lg-block col-lg-8 ">
                             <nav class="nav">
                                 <ul class="ul-spacei">
-                                    <li class="nav-item">
-                                        <a href="/">Inicio</a>
+                                    <li class="nav-item">  
+                                        <router-link to="/">Inicio</router-link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="/establecimientos">Establecimientos</a>
+                                        
+                                        <router-link to="establecimientos">Establecimientos</router-link>
                                     </li>
                                     <!--li class="nav-item">
                                         <a href="">Noticias</a>
@@ -50,9 +51,9 @@
                         <nav class="nav">
                             <ul class="ul-spaced">
                                 <li>
-                                    <a class="btnFormEstablecimientos" href="/registro_establecimiento">
+                                    <router-link class="btnFormEstablecimientos" to="registro_establecimiento">
                                         <i class="fa fa-plus"></i> Agregar Establecimiento
-                                    </a>
+                                    </router-link>
                                 </li>
                                 <li v-if="loggedIn">
                                     <button class="btnCerrarToken" @click="logout()">
@@ -60,7 +61,7 @@
                                     </button>
                                 </li>
                                 <li v-if="!loggedIn">
-                                    <a href="/inicio_sesion">Iniciar Sesión / Registrarme</a>
+                                    <router-link to="inicio_sesion">Iniciar Sesión / Registrarme</router-link>
                                 </li>
                             </ul>
                         </nav>
@@ -81,20 +82,19 @@
         <div id="subheader" v-bind:style="styleSubheader" class="d-block d-sm-block d-md-block d-lg-none d-xl-none col-md-12">
             <ul class="subnav-mobile">
                  <li>
-                    <a href="/">Inicio</a>
+                    <router-link to="/">Inicio</router-link>
                 </li>
                 <li>
-                    <a href="/establecimientos">Establecimientos</a>
+                   <router-link to="establecimientos">Establecimientos</router-link>
                 </li>
                 <li>
-                    <a class="btnFormEstablecimientos" href="/registro_establecimiento">
+                   <router-link class="btnFormEstablecimientos" to="registro_establecimiento">
                         <i class="fa fa-plus"></i> Agregar Establecimiento
-                    </a>
+                    </router-link>
                 </li>
                 <li v-if="!loggedIn">
-                    <a href="/inicio_sesion">Inicio de Sesión / Registro</a>
+                    <router-link to="inicio_sesion">Iniciar Sesión / Registrarme</router-link>
                 </li>
-                
                 <li v-if="loggedIn">
                     <button class="btnCerrarToken" @click="logout()">
                         Cerrar sesion
