@@ -107,7 +107,7 @@ export default {
             if(this.registrousername && this.validEmail(this.registroemail) && this.registropassword && this.registrorepassword){
                 if(this.registrorepassword == this.registropassword){
                     let currentObj = this;
-                    this.axios.post('https://35.198.26.118:4000/api/sign_up', {
+                    this.axios.post('https://dtodoaqui.pw/api/sign_up', {
                         user:{
                         username : this.registrousername,
                         email: this.registroemail,
@@ -163,7 +163,7 @@ export default {
                 console.log('Logeando');
             
 
-            this.axios.post('https://35.198.26.118:4000/api/sign_in', {
+            this.axios.post('https://dtodoaqui.pw/api/sign_in', {
                 email: this.email,
                 password: this.password
             })

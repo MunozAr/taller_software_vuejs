@@ -59,6 +59,7 @@ export default {
             horarioEstablecimiento: '',
             correoEstablecimiento: '',
             descripcionEstablecimiento: null,
+            establecimiento: {},
             errors:[],
         }
     },
@@ -74,7 +75,7 @@ export default {
         },
         formRegistroEstablecimiento(e){
             e.preventDefault();
-            var establecimiento = {
+                this.establecimiento = {
                 "fotos" : this.fotosFile.name,
                 "name" : this.nombreEstablecimiento,
                 "telefono" : this.telefonoEstablecimiento,
