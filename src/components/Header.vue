@@ -57,7 +57,7 @@
                                 </li>
                                 <li v-if="loggedIn">
                                   <router-link class="btnCerrarToken" to="inicio_sesion">
-                                    <i class="fa fa-plus"></i> Cerrar sesion
+                                    Cerrar sesion
                                   </router-link>
                                 </li>
                                 <li v-if="!loggedIn">
@@ -97,7 +97,7 @@
                 </li>
                 <li v-if="loggedIn">
                     <router-link class="btnCerrarToken" to="inicio_sesion">
-                        <i class="fa fa-plus"></i> Cerrar sesion
+                        Cerrar sesion
                     </router-link>
                 </li>
                 
@@ -332,22 +332,24 @@ margin-left:6000px;
 
 .btnCerrarToken{
     border:1px solid #ff1d47;
-    color: #ff1d47;
+    color: #ff1d47 !important;
     background-color: transparent;
     outline: none;
     font-family: 'muli_bold';
     font-size: 13px;
+    padding:10px !important;
     border-radius: 20px;
     transition: 0.4s all;
 }
 
 .btnCerrarToken:hover,.btnCerrarToken:focus{
     border:1px solid #ff1d47;
-    color: white;
+    color: white !important;
     background-color: #ff1d47;
     outline: none;
     font-family: 'muli_bold';
     font-size: 13px;
+    padding:10px !important;
     border-radius: 20px;
     transition: 0.4s all;
 }
