@@ -56,9 +56,9 @@
                                     </router-link>
                                 </li>
                                 <li v-if="loggedIn">
-                                    <button class="btnCerrarToken" @click="logout()">
-                                        Cerrar sesion
-                                    </button>
+                                  <router-link class="btnCerrarToken" to="inicio_sesion">
+                                    <i class="fa fa-plus"></i> Cerrar sesion
+                                  </router-link>
                                 </li>
                                 <li v-if="!loggedIn">
                                     <router-link to="inicio_sesion">Iniciar Sesión / Registrarme</router-link>
@@ -96,9 +96,9 @@
                     <router-link to="inicio_sesion">Iniciar Sesión / Registrarme</router-link>
                 </li>
                 <li v-if="loggedIn">
-                    <button class="btnCerrarToken" @click="logout()">
-                        Cerrar sesion
-                    </button>
+                    <router-link class="btnCerrarToken" to="inicio_sesion">
+                        <i class="fa fa-plus"></i> Cerrar sesion
+                    </router-link>
                 </li>
                 
                 <!--li>
