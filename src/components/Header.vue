@@ -34,9 +34,8 @@
                                     <li class="nav-item">  
                                         <router-link to="/">Inicio</router-link>
                                     </li>
-                                    <li class="nav-item">
-                                        
-                                        <router-link to="establecimientos">Establecimientos</router-link>
+                                    <li class="nav-item" >
+                                        <router-link to="establecimientos" >Establecimientos</router-link>
                                     </li>
                                     <!--li class="nav-item">
                                         <a href="">Noticias</a>
@@ -55,8 +54,8 @@
                                         <i class="fa fa-plus"></i> Agregar Establecimiento
                                     </router-link>
                                 </li>
-                                <li v-if="loggedIn">
-                                  <router-link class="btnCerrarToken" to="inicio_sesion">
+                                <li v-if="loggedIn" @click="logout()">
+                                  <router-link class="btnCerrarToken" to="inicio_sesion" >
                                     Cerrar sesion
                                   </router-link>
                                 </li>
@@ -95,8 +94,8 @@
                 <li v-if="!loggedIn">
                     <router-link to="inicio_sesion">Iniciar Sesión / Registrarme</router-link>
                 </li>
-                <li v-if="loggedIn">
-                    <router-link class="btnCerrarToken" to="inicio_sesion">
+                <li v-if="loggedIn" @click="logout()">
+                    <router-link class="btnCerrarToken" to="inicio_sesion" >
                         Cerrar sesion
                     </router-link>
                 </li>
@@ -155,7 +154,7 @@ export default {
         localStorage.removeItem('access_token')
         localStorage.removeItem('id')
         this.$store.state.accessToken = null;
-        setTimeout("location.href='inicio_sesion'", 1000);
+        this.$router.push({name:'inicio_sesion'});
       },
     },
     computed:{
