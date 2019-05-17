@@ -182,16 +182,25 @@ export default {
         }
     },
     created() {
-        const auth = {
+        /*const auth = {
         headers: {Authorization:'Bearer ' + localStorage.getItem('access-token') } 
         }
-        this.axios.get('https://dtodoaqui.pw/api/profile',auth).then(result => { 
+        const auth2 = {
+        headers: {"Authorization":'Bearer ' + localStorage.getItem('access-token') } 
+        }*/
+        let webApiUrl = 'https://dtodoaqui.pw/api/my_profile';
+        let tokenStr = localStorage.getItem('access-token');
+        this.axios.get(webApiUrl, { headers: {"Authorization" : `Bearer ${tokenStr}`} }).then(result => { 
         console.log(result.data)
         });
 
-        this.axios.get('https://dtodoaqui.pw/api/my_user',auth).then(result => { 
+       /* this.axios.get('https://dtodoaqui.pw/api/my_profile',auth).then(result => { 
         console.log(result.data)
         });
+
+        this.axios.get('https://dtodoaqui.pw/api/my_user',auth2).then(result => { 
+        console.log(result.data)
+        });*/
         
         
     }
