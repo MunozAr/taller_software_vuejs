@@ -47,10 +47,6 @@
                             </div>
                             <div v-if="changePass" class="col-12 np">
                                 <div class="form-group">
-                                    <label for="firstName"><i class="fab fa-galactic-senate"></i>Contraseña: </label>
-                                    <input type="text" v-model="password" class="inputProfile" aria-describedby="passHelp" placeholder="Mi Password">
-                                </div>
-                                <div class="form-group">
                                     <label for="firstName"><i class="fab fa-galactic-senate"></i>Nueva contraseña: </label>
                                     <input type="text" v-model="cpassword" class="inputProfile" aria-describedby="passHelp" placeholder="Mi Password">
                                 </div>
@@ -89,25 +85,25 @@
                         <form @submit="formDatos" autocomplete="off">
                             <div class="form-group">
                                 <label for="firstName"><i class="fab fa-galactic-senate"></i> Nombres: </label>
-                                <input type="text" v-model="nombres" class="inputProfile" aria-describedby="nameHelp" placeholder="Mi Nombre Completo" disabled>
+                                <input type="text" v-model="nombres" class="inputProfile" aria-describedby="nameHelp" placeholder="Mi Nombre Completo" >
                                 <small id="nameHelp" class="form-text text-muted">Este campo es obligatorio!.</small>
                             </div>
                             <div class="form-group">
                                 <label for="lastName"><i class="fas fa-dice-d20"></i> Apellidos: </label>
-                                <input type="text" v-model="apellidos" class="inputProfile" aria-describedby="apellidoHelp" placeholder="Mi Apellido Completo" disabled>
+                                <input type="text" v-model="apellidos" class="inputProfile" aria-describedby="apellidoHelp" placeholder="Mi Apellido Completo" >
                                 <small id="apellidoHelp" class="form-text text-muted">Este campo es obligatorio!.</small>
                             </div>
                             <div class="form-group">
                                 <label for="phoneUser"><i class="fas fa-phone-square"></i> Teléfono: </label>
-                                <input type="text" v-model="telefono" class="inputProfile" aria-describedby="telefonoHelp" placeholder="Mi Teléfono" disabled>
+                                <input type="text" v-model="telefono" class="inputProfile" aria-describedby="telefonoHelp" placeholder="Mi Teléfono" >
                             </div>
                             <div v-if="!changeDatos" class="form-group">
                                 <label for="paisUser"><i class="fas fa-grin-beam-sweat"></i> País: </label>
-                                <input type="text" v-model="pais" class="inputProfile" aria-describedby="paisHelp" placeholder="Mi Pais" disabled>
+                                <input type="text" v-model="pais" class="inputProfile" aria-describedby="paisHelp" placeholder="Mi Pais" >
                             </div>
                             <div class="form-group">
                                 <label for="paisUser"><i class="fas fa-grin-beam-sweat"></i> Dirección: </label>
-                                <input type="text" v-model="direccion" class="inputProfile" aria-describedby="direccionHelp" placeholder="Mi Dirección" disabled>
+                                <input type="text" v-model="direccion" class="inputProfile" aria-describedby="direccionHelp" placeholder="Mi Dirección" >
                             </div>
                             <div v-if="changeDatos" class="col-12 np">
                                 <div class="form-group">
@@ -137,7 +133,6 @@ export default {
     data() {
         return {
         username: '',
-        password: '',
         cpassword: '',
         crepassword: '',
         nombres: '',
@@ -170,40 +165,57 @@ export default {
         },
         formDatos(e){
             e.preventDefault();
-            /*this.axios.post('https://dtodoaqui.pw/api/profile', {
-                user:{
-                username : this.registrousername,
-                email: this.registroemail,
-                password: this.registropassword,
-                password_confirmation: this.registrorepassword
+            this.axios.post('https://dtodoaqui.pw/api/profile', {
+                profile:{
+                user_id : localStorage.getItem('id'),
+                avatar_name : 'prueba.jpg',
+                first_name: this.nombres,
+                last_name: this.apellidos,
+                country: this.country,
+                address: this.direccion,
+                description: this.descripcion,
+                phone: this.telefono,
+                website: 'prueba.web',
+                facebook: 'prueba.face',
+                twitter: 'prueba.twit',
+                linkedin: 'prueba.link',
+                created: '2019-10-29T20:12:30Z',
+                modified: '2019-10-29T20:12:30Z',
+                inserted_at: '2019-10-29T20:12:30Z',
+                updated_at: '2019-10-29T20:12:30Z',
+                
                 }
-            })*/
-
-        }
+            }).then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+        },
     },
     created() {
-        /*const auth = {
-        headers: {Authorization:'Bearer ' + localStorage.getItem('access-token') } 
-        }
-        const auth2 = {
-        headers: {"Authorization":'Bearer ' + localStorage.getItem('access-token') } 
-        }*/
-        let webApiUrl = 'https://dtodoaqui.pw/api/my_profile';
-        let tokenStr = localStorage.getItem('access-token');
-        this.axios.get(webApiUrl, { headers: {"Authorization" : `Bearer ${tokenStr}`} }).then(result => { 
-        console.log(result.data)
+    
+        let mytokenPromise = this.$store.getters.returnAcces;
+        //console.log(mytokenPromise);
+        Promise.all([mytokenPromise]).then((vals) => {
+        this.axios.get('https://dtodoaqui.pw/api/my_user', {
+            withCredentials: false,
+            headers: {'Authorization': 'Bearer ' + mytokenPromise }
+        }).then(result => { 
+            this.username = result.data.username;
         });
-
-       /* this.axios.get('https://dtodoaqui.pw/api/my_profile',auth).then(result => { 
-        console.log(result.data)
         });
+        
+        Promise.all([mytokenPromise]).then((vals) => {
+        this.axios.get('https://dtodoaqui.pw/api/my_profile', {
+            withCredentials: false,
+            headers: {'Authorization': 'Bearer ' + mytokenPromise }
+        }).then(result => { 
+            console.log(result.data)
+        });
+        });  
+    },
 
-        this.axios.get('https://dtodoaqui.pw/api/my_user',auth2).then(result => { 
-        console.log(result.data)
-        });*/
-        
-        
-    }
 
 }
 </script>
