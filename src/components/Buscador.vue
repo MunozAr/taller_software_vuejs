@@ -17,21 +17,19 @@
                                 <input class="form-control" type="text" autocomplete="off" placeholder="Palabra clave">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="text" autocomplete="off"
-                                    placeholder="Ingrese su zona">
+                                <input class="form-control" type="text" autocomplete="off" placeholder="Ingrese su zona">
                             </div>
                             <div class="form-group">
-                                <select name="categoria" id="categoriaBusqueda" class="form-control option-style"
-                                    tabindex="-98">
-                                    <option class="color-selected" value="0" selected disabled>Todas las categorías
-                                    </option>
-                                    <option class="color-selected" value="prueba 1"> Prueba 1</option>
-                                </select>
+                                <select name="categoria" id="categoriaBusqueda" class="form-control option-style" tabindex="-98">
+                                        <option class="color-selected" value="0" selected disabled>Todas las categorías
+                                        </option>
+                                        <option class="color-selected" value="prueba 1"> Prueba 1</option>
+                                    </select>
                             </div>
                             <div class="form-group form-control">
                                 <button type="submit" id="busquedaForm" class="btn-busquedaForm">
-                                    BUSCAR LOCALES
-                                </button>
+                                        BUSCAR LOCALES
+                                    </button>
                             </div>
                         </div>
                     </form>
@@ -40,9 +38,10 @@
         </div>
     </section>
 </template>
+
 <script>
 export default {
-    name :'Buscador',
+    name: 'Buscador',
 
 }
 </script>

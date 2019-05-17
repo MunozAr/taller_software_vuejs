@@ -5,9 +5,11 @@ import store from "./store";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import VueJwtDecode from "vue-jwt-decode";
+import vueCountryRegionSelect from 'vue-country-region-select';
 
 Vue.use(VueJwtDecode);
 Vue.use(VueAxios, axios);
+Vue.use(vueCountryRegionSelect);
 
 Vue.config.productionTip = false;
 const token = localStorage.getItem('access_token')

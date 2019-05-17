@@ -9,18 +9,18 @@
                     <ul class="nav-redesFooter">
                         <li>
                             <a class="color-IconF" href="">
-                                <i class="fab fa-facebook"></i>
-                            </a>
+                                    <i class="fab fa-facebook"></i>
+                                </a>
                         </li>
                         <li>
                             <a class="color-IconF" href="">
-                                <i class="fab fa-twitter"></i>
-                            </a>
+                                    <i class="fab fa-twitter"></i>
+                                </a>
                         </li>
                         <li>
                             <a class="color-IconF" href="">
-                                <i class="fab fa-instagram"></i>
-                            </a>
+                                    <i class="fab fa-instagram"></i>
+                                </a>
                         </li>
                     </ul>
                 </div>
@@ -32,7 +32,7 @@
 <script>
 /*eslint-disable */
 export default {
-    name : 'Footer',
+    name: 'Footer',
 }
 </script>
 
