@@ -169,7 +169,7 @@ export default {
     },
     computed: {
         loggedIn() {
-            console.log(this.$store.getters.loggedIn);
+            //console.log(this.$store.getters.loggedIn);
             return this.$store.getters.loggedIn
         },
 
