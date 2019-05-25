@@ -351,7 +351,7 @@ transition: all 0.5s;
 }
 
 .posSesion{
-    background: url(../img/totalback_sesion.jpg);
+    background: url(../static/images/totalback_sesion.jpg);
     width: 100%;
     height: auto;
     background-size: cover;
@@ -379,7 +379,7 @@ a {
     max-width: 525px;
     height: auto;
     position: relative;
-    background: url(../img/bg2.jpg);
+    background: url(../static/images/bg2.jpg);
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
 }
 .login-wrap {
@@ -388,7 +388,7 @@ a {
     max-width: 525px;
     height: 680px;
     position: relative;
-    background: url(../img/bg.jpg) no-repeat center;
+    background: url(../static/images/bg.jpg) no-repeat center;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
 }
 
@@ -555,7 +555,7 @@ a {
 
 /*Registro Establecimientos*/
 .backgroundEstablecimiento{
-    background: url(../img/totalback_establecimiento.jpg);
+    background: url(../static/images/totalback_establecimiento.jpg);
     width: 100%;
     height: auto;
     background-size: cover;
@@ -570,7 +570,7 @@ a {
 @media (min-width:320px) {
     /*Header*/
     .backgroundNav {
-        background: url(../img/topback.jpg);
+        background: url(../static/images/topback.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -633,7 +633,7 @@ a {
     }
 
     .backgroundEstablecimientos{
-      background-image: url(../img/back_establecimientos.jpg);
+      background-image: url(../static/images/back_establecimientos.jpg);
       height: 320px;
       background-size: cover;
       width: 100%;
@@ -651,7 +651,7 @@ a {
 @media (min-width:768px) {
     /*Header*/
     .backgroundNav {
-        background: url(../img/topback.jpg);
+        background: url(../static/images/topback.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;

@@ -11,7 +11,7 @@
                     <a href="">
                         <div class="col-12 np">
     
-                            <img class="" src="../assets/img/hotel.png" alt="">
+                            <img class="" src="../../static/images/hotel.png" alt="">
     
                         </div>
                         <div class="col-12 np postitleCategoria">
@@ -25,7 +25,7 @@
                     <a href="">
                         <div class="col-12 np">
     
-                            <img src="../assets/img/food-truck.png" alt="">
+                            <img src="../../static/images/food-truck.png" alt="">
     
                         </div>
                         <div class="col-12 np postitleCategoria">
@@ -39,7 +39,7 @@
                     <a href="">
                         <div class="col-12 np">
     
-                            <img src="../assets/img/restaurant.png" alt="">
+                            <img src="../../static/images/restaurant.png" alt="">
     
                         </div>
                         <div class="col-12 np postitleCategoria">
@@ -53,7 +53,7 @@
                     <a href="">
                         <div class="col-12 np">
     
-                            <img src="../assets/img/gym.png" alt="">
+                            <img src="../../static/images/gym.png" alt="">
     
                         </div>
                         <div class="col-12 np postitleCategoria">

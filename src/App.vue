@@ -5,9 +5,9 @@
 </template>
 
 <style>
-@import 'assets/css/style.css';
-@import 'assets/css/bootstrap.min.css';
-@import 'static/fonts/stylesheet.css';
+@import '../css/style.css';
+@import '../css/bootstrap.min.css';
+@import '../static/fonts/stylesheet.css';
 
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
