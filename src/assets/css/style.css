@@ -78,7 +78,6 @@ body {
     background-color: white !important;
     padding-top: 10px;
     padding-bottom: 10px;
-    transition: 0.4s all;
     position: fixed;
     width: 100%;
     z-index: 997;
@@ -352,7 +351,7 @@ transition: all 0.5s;
 }
 
 .posSesion{
-    background-image: url('../img/totalback_sesion.jpg');
+    background: url(../img/totalback_sesion.jpg);
     width: 100%;
     height: auto;
     background-size: cover;
@@ -556,7 +555,7 @@ a {
 
 /*Registro Establecimientos*/
 .backgroundEstablecimiento{
-    background-image: url('../img/totalback_establecimiento.jpg');
+    background: url(../img/totalback_establecimiento.jpg);
     width: 100%;
     height: auto;
     background-size: cover;
@@ -571,7 +570,7 @@ a {
 @media (min-width:320px) {
     /*Header*/
     .backgroundNav {
-        background-image: url('../img/topback.jpg');
+        background: url(../img/topback.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -634,7 +633,7 @@ a {
     }
 
     .backgroundEstablecimientos{
-      background-image: url('../img/back_establecimientos.jpg');
+      background-image: url(../img/back_establecimientos.jpg);
       height: 320px;
       background-size: cover;
       width: 100%;
@@ -652,7 +651,7 @@ a {
 @media (min-width:768px) {
     /*Header*/
     .backgroundNav {
-        background-image: url('../img/topback.jpg');
+        background: url(../img/topback.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;

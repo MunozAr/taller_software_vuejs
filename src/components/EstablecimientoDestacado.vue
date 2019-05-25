@@ -1,7 +1,7 @@
 <template>
     <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 pad-establecimiento">
         <div class="col-12 np">
-            <a href="#"><img class="img-responsive" src="../assets/img/establishment.jpg" alt="Establecimiento ejemplo 2"></a>
+            <a href="#"><img class="img-responsive" src="" alt="Establecimiento ejemplo 2"></a>
         </div>
         <div class="col-12 titleEstablecimiento">
             <h4>

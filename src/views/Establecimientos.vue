@@ -1,6 +1,6 @@
 <template>
   <div class="establecimientos">
-    <Header />  
+    <SearchHeader />  
     <BannerEstablecimiento />
     <div class="container">
       <div class="row">
@@ -21,14 +21,14 @@
 <script>
 /*eslint-disable */
 // @ is an alias to /src
-import Header from "@/components/Header.vue";
+import SearchHeader from "@/components/SearchHeader.vue";
 import Footer from "@/components/Footer.vue";
 import BannerEstablecimiento from "@/components/BannerEstablecimiento.vue";
 import Establecimiento from "@/components/Establecimiento.vue";
 export default {
   name: "establecimientos",
   components: {
-    Header,
+    SearchHeader,
     BannerEstablecimiento,
     Establecimiento,
     Footer,

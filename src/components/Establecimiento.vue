@@ -2,7 +2,7 @@
     <div class="col-12 np">
         <div class="row">
             <div class="col-12 col-sm-5 np">
-                <img class="img-responsive" src="../assets/img/establishment.jpg" alt="">
+                <img class="img-responsive" src="" alt="">
             </div>
             <div class="col-12 col-sm-7 text-left">
                 <div class="col-12 titleEstablecimiento">
